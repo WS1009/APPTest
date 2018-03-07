@@ -36,12 +36,13 @@ public class Recycler01Activity extends Activity {
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         //mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));
 
-        //设置布局管理器
+        //设置布局管理器 GridLayoutManager以网格方式展示item
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,
                 StaggeredGridLayoutManager.VERTICAL));
 
         mRecyclerView.setAdapter(mAdapter);
 
+        //item的间隔
         mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this));
 
         // 设置Item添加和移除的动画
@@ -53,7 +54,7 @@ public class Recycler01Activity extends Activity {
         mDatas = new ArrayList<String>();
 
         String temp = " item";
-        for(int i = 0; i < 200; i++) {
+        for (int i = 0; i < 200; i++) {
             mDatas.add(i + temp);
         }
 
@@ -64,7 +65,7 @@ public class Recycler01Activity extends Activity {
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // 实例化展示的view
-            View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, parent, false);
             // 实例化viewholder
             MyViewHolder holder = new MyViewHolder(view);
             return holder;
@@ -79,7 +80,7 @@ public class Recycler01Activity extends Activity {
 
         @Override
         public int getItemCount() {
-            return mDatas.size();
+            return mDatas == null ? 0 : mDatas.size();
         }
 
 
