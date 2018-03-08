@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:onClick="click"
         android:textAllCaps="false"
-        android:text="button-06" />
+        android:text="QQListViewActivity" />
 
 
 </LinearLayout>

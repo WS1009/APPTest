@@ -11,6 +11,7 @@ import com.wangshun.apptest.recycler.RecyclerGridActivity;
 import com.wangshun.apptest.recycler.RecyclerLinearActivity;
 import com.wangshun.apptest.recycler.RecyclerStaggeredGridActivity;
 import com.wangshun.apptest.recycler.RecyclerStaggeredGrid2Activity;
+import com.wangshun.apptest.view.QQListViewActivity;
 
 public class MainActivity extends Activity {
 
@@ -40,6 +41,10 @@ public class MainActivity extends Activity {
                 break;
             case R.id.btn_05:
                 startActivity(new Intent(MainActivity.this,CardView2StaggeredGridActivity.class));
+                finish();
+                break;
+            case R.id.btn_06:
+                startActivity(new Intent(MainActivity.this,QQListViewActivity.class));
                 finish();
                 break;
         }

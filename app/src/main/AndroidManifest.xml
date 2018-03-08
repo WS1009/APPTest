@@ -20,7 +20,8 @@
         <activity android:name=".recycler.RecyclerLinearActivity" />
         <activity android:name=".recycler.RecyclerGridActivity" />
         <activity android:name=".recycler.RecyclerStaggeredGrid2Activity" />
-        <activity android:name=".recycler.CardView2StaggeredGridActivity"></activity>
+        <activity android:name=".recycler.CardView2StaggeredGridActivity" />
+        <activity android:name=".view.QQListViewActivity"></activity>
     </application>
 
 </manifest>
