@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wangshun.apptest.activity.Recycler01Activity"
+    tools:context="com.wangshun.apptest.recycler.RecyclerStaggerGridActivity"
     android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView

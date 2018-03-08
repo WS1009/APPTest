@@ -1,4 +1,4 @@
-package com.wangshun.apptest.activity;
+package com.wangshun.apptest.recycler;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import com.wangshun.apptest.decoration.DividerGridItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recycler01Activity extends Activity {
+public class RecyclerStaggerGridActivity extends Activity {
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas;
@@ -36,7 +36,7 @@ public class Recycler01Activity extends Activity {
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         //mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));
 
-        //设置布局管理器 GridLayoutManager以网格方式展示item
+        //设置布局管理器 StaggeredGridLayout以瀑布流方式展示item
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,
                 StaggeredGridLayoutManager.VERTICAL));
 

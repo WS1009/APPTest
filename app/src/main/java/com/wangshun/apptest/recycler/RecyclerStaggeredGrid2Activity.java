@@ -1,4 +1,4 @@
-package com.wangshun.apptest.activity;
+package com.wangshun.apptest.recycler;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.wangshun.apptest.decoration.MDGridRvDividerDecoration;
 
 import java.util.ArrayList;
 
-public class Recycler04Activity extends Activity {
+public class RecyclerStaggeredGrid2Activity extends Activity {
 
     private RecyclerView mRecyclerView;
 

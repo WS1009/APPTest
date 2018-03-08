@@ -1,8 +1,10 @@
-package com.wangshun.apptest.activity;
+package com.wangshun.apptest.recycler;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +12,11 @@ import android.widget.Toast;
 
 import com.wangshun.apptest.R;
 import com.wangshun.apptest.adapter.MyAdapter;
-import com.wangshun.apptest.decoration.MyDividerItemDecoration;
+import com.wangshun.apptest.decoration.MDGridRvDividerDecoration;
 
 import java.util.ArrayList;
 
-public class Recycler02Activity extends Activity implements View.OnClickListener{
+public class RecyclerGridActivity extends Activity implements View.OnClickListener{
 
     private RecyclerView mRecyclerView;
 
@@ -25,7 +27,13 @@ public class Recycler02Activity extends Activity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler02);
+        setContentView(R.layout.activity_recycler03);
+
+        Button add = findViewById(R.id.rv_add_item_btn);
+        Button del = findViewById(R.id.rv_del_item_btn);
+        add.setOnClickListener(RecyclerGridActivity.this);
+        del.setOnClickListener(RecyclerGridActivity.this);
+
         initData();
         initView();
     }
@@ -34,30 +42,27 @@ public class Recycler02Activity extends Activity implements View.OnClickListener
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mAdapter = new MyAdapter(getData());
 
-        Button add = findViewById(R.id.rv_add_item_btn);
-        Button del = findViewById(R.id.rv_del_item_btn);
-        add.setOnClickListener(Recycler02Activity.this);
-        del.setOnClickListener(Recycler02Activity.this);
-
         mAdapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(Recycler02Activity.this,"click " + position + " item", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerGridActivity.this,"click " + position + " item", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onItemLongClick(View view, int position) {
-                Toast.makeText(Recycler02Activity.this,"long click " + position + " item", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerGridActivity.this,"long click " + position + " item", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void initView() {
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+        mLayoutManager = new GridLayoutManager(this, 4, OrientationHelper.VERTICAL, false);
         // 设置布局管理器
         mRecyclerView.setLayoutManager(mLayoutManager);
         //设置间隔样式
-        mRecyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        mRecyclerView.addItemDecoration(new MDGridRvDividerDecoration(this));
         // 设置adapter
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -65,7 +70,7 @@ public class Recycler02Activity extends Activity implements View.OnClickListener
     private ArrayList<String> getData() {
         ArrayList<String> data = new ArrayList<>();
         String temp = " item";
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < 200; i++) {
             data.add(i + temp);
         }
 
