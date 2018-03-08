@@ -1,4 +1,4 @@
-package com.wangshun.apptest.view;
+package com.wangshun.apptest.view.qqlistview;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -78,8 +78,7 @@ public class QQListView extends ListView {
      * @param context
      * @param attrs
      */
-    public QQListView(Context context, AttributeSet attrs)
-    {
+    public QQListView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         mInflater = LayoutInflater.from(context);
@@ -98,13 +97,11 @@ public class QQListView extends ListView {
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev)
-    {
+    public boolean dispatchTouchEvent(MotionEvent ev) {
         int action = ev.getAction();
         int x = (int) ev.getX();
         int y = (int) ev.getY();
-        switch (action)
-        {
+        switch (action) {
 
             case MotionEvent.ACTION_DOWN:
                 xDown = x;
@@ -112,8 +109,7 @@ public class QQListView extends ListView {
                 /**
                  * 如果当前popupWindow显示，则直接隐藏，然后屏蔽ListView的touch事件的下传
                  */
-                if (mPopupWindow.isShowing())
-                {
+                if (mPopupWindow.isShowing()) {
                     dismissPopWindow();
                     return false;
                 }
@@ -131,8 +127,7 @@ public class QQListView extends ListView {
                 /**
                  * 判断是否是从右到左的滑动
                  */
-                if (xMove < xDown && Math.abs(dx) > touchSlop && Math.abs(dy) < touchSlop)
-                {
+                if (xMove < xDown && Math.abs(dx) > touchSlop && Math.abs(dy) < touchSlop) {
                     // Log.e(TAG, "touchslop = " + touchSlop + " , dx = " + dx +
                     // " , dy = " + dy);
                     isSliding = true;
@@ -143,36 +138,34 @@ public class QQListView extends ListView {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent ev)
-    {
+    public boolean onTouchEvent(MotionEvent ev) {
         int action = ev.getAction();
         /**
-         * 如果是从右到左的滑动才相应
+         * 如果是从右到左的滑动才响应
          */
-        if (isSliding)
-        {
-            switch (action)
-            {
+        if (isSliding) {
+            switch (action) {
                 case MotionEvent.ACTION_MOVE:
 
                     int[] location = new int[2];
+
                     // 获得当前item的位置x与y
                     mCurrentView.getLocationOnScreen(location);
+
                     // 设置popupWindow的动画
                     //mPopupWindow.setAnimationStyle(R.style.popwindow_delete_btn_anim_style);
 
                     mPopupWindow.update();
+
                     mPopupWindow.showAtLocation(mCurrentView, Gravity.LEFT | Gravity.TOP,
                             location[0] + mCurrentView.getWidth(), location[1] + mCurrentView.getHeight() / 2
                                     - mPopupWindowHeight / 2);
+
                     // 设置删除按钮的回调
-                    mDelBtn.setOnClickListener(new OnClickListener()
-                    {
+                    mDelBtn.setOnClickListener(new OnClickListener() {
                         @Override
-                        public void onClick(View v)
-                        {
-                            if (mListener != null)
-                            {
+                        public void onClick(View v) {
+                            if (mListener != null) {
                                 mListener.clickHappend(mCurrentViewPos);
                                 mPopupWindow.dismiss();
                             }
@@ -195,21 +188,17 @@ public class QQListView extends ListView {
     /**
      * 隐藏popupWindow
      */
-    private void dismissPopWindow()
-    {
-        if (mPopupWindow != null && mPopupWindow.isShowing())
-        {
+    private void dismissPopWindow() {
+        if (mPopupWindow != null && mPopupWindow.isShowing()) {
             mPopupWindow.dismiss();
         }
     }
 
-    public void setDelButtonClickListener(DelButtonClickListener listener)
-    {
+    public void setDelButtonClickListener(DelButtonClickListener listener) {
         mListener = listener;
     }
 
-    interface DelButtonClickListener
-    {
+    interface DelButtonClickListener {
         public void clickHappend(int position);
     }
 

@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.wangshun.apptest.view.QQListView
+    <com.wangshun.apptest.view.qqlistview.QQListView
         android:id="@+id/id_listview"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"></com.wangshun.apptest.view.QQListView>
+        android:layout_height="wrap_content"></com.wangshun.apptest.view.qqlistview.QQListView>
 </RelativeLayout>

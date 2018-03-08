@@ -55,6 +55,13 @@
         android:onClick="click"
         android:textAllCaps="false"
         android:text="QQListViewActivity" />
+    <Button
+        android:id="@+id/btn_07"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:textAllCaps="false"
+        android:text="CommonListViewActivity" />
 
 
 </LinearLayout>
