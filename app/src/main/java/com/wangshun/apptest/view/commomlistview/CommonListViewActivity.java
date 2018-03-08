@@ -21,6 +21,7 @@ public class CommonListViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_listview);
+
         mListView = (ListView) findViewById(R.id.id_lv_main);
 
 
@@ -44,6 +45,7 @@ public class CommonListViewActivity extends Activity {
         //设置适配器
         mListView.setAdapter(mAdapter = new CommonAdapter<Bean>(
                 getApplicationContext(), mDatas, R.layout.item_single_str2) {
+
             @Override
             public void convert(ViewHolder viewHolder, Bean item) {
                 viewHolder.setText(R.id.tv_title, item.getTitle());

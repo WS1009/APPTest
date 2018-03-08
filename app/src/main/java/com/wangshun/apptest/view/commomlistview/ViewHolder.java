@@ -28,8 +28,6 @@ public class ViewHolder {
 
         //setTag：通过convertView.setTag与convertView进行绑定
         mConvertView.setTag(this);
-
-
     }
 
     /**
@@ -42,8 +40,7 @@ public class ViewHolder {
      * @param position
      * @return
      */
-    public static ViewHolder get(Context context, View convertView,
-                                 ViewGroup parent, int layoutId, int position) {
+    public static ViewHolder get(Context context, View convertView, ViewGroup parent, int layoutId, int position) {
 
         if (convertView == null) {
             return new ViewHolder(context, parent, layoutId, position);
