@@ -21,10 +21,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
      */
     private ArrayList<String> mData;
 
-    /**
-     * 事件回调监听
-     */
-    private MyAdapter.OnItemClickListener onItemClickListener;
 
     public MyAdapter(ArrayList<String> data) {
         this.mData = data;
@@ -39,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
      * 添加新的Item
      */
     public void addNewItem() {
-        if(mData == null) {
+        if (mData == null) {
             mData = new ArrayList<>();
         }
         mData.add(0, "new Item");
@@ -50,11 +46,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
      * 删除Item
      */
     public void deleteItem() {
-        if(mData == null || mData.isEmpty()) {
+        if (mData == null || mData.isEmpty()) {
             return;
         }
         mData.remove(0);
         notifyItemRemoved(0);
+    }
+
+
+    /**
+     * 事件回调监听
+     */
+    private MyAdapter.OnItemClickListener onItemClickListener;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+
+        void onItemLongClick(View view, int position);
     }
 
     /**
@@ -85,7 +94,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                if(onItemClickListener != null) {
+                if (onItemClickListener != null) {
                     int pos = holder.getLayoutPosition();
                     onItemClickListener.onItemClick(holder.itemView, pos);
                 }
@@ -95,7 +104,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if(onItemClickListener != null) {
+                if (onItemClickListener != null) {
                     int pos = holder.getLayoutPosition();
                     onItemClickListener.onItemLongClick(holder.itemView, pos);
                 }
@@ -121,8 +130,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-        void onItemLongClick(View view, int position);
-    }
+
 }

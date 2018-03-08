@@ -16,10 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".recycler.RecyclerStaggerGridActivity" />
-        <activity android:name=".recycler.RecyclerLinearActivity"></activity>
-        <activity android:name=".recycler.RecyclerGridActivity"></activity>
-        <activity android:name=".recycler.RecyclerStaggeredGrid2Activity"></activity>
+        <activity android:name=".recycler.RecyclerStaggeredGridActivity" />
+        <activity android:name=".recycler.RecyclerLinearActivity" />
+        <activity android:name=".recycler.RecyclerGridActivity" />
+        <activity android:name=".recycler.RecyclerStaggeredGrid2Activity" />
+        <activity android:name=".recycler.CardView2StaggeredGridActivity"></activity>
     </application>
 
 </manifest>

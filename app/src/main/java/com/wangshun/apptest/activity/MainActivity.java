@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.wangshun.apptest.R;
+import com.wangshun.apptest.recycler.CardView2StaggeredGridActivity;
 import com.wangshun.apptest.recycler.RecyclerGridActivity;
 import com.wangshun.apptest.recycler.RecyclerLinearActivity;
-import com.wangshun.apptest.recycler.RecyclerStaggerGridActivity;
+import com.wangshun.apptest.recycler.RecyclerStaggeredGridActivity;
 import com.wangshun.apptest.recycler.RecyclerStaggeredGrid2Activity;
 
 public class MainActivity extends Activity {
@@ -22,7 +23,7 @@ public class MainActivity extends Activity {
     public void click(View view){
         switch (view.getId()){
             case R.id.btn_01:
-                startActivity(new Intent(MainActivity.this,RecyclerStaggerGridActivity.class));
+                startActivity(new Intent(MainActivity.this,RecyclerStaggeredGridActivity.class));
                 finish();
                 break;
             case R.id.btn_02:
@@ -35,6 +36,10 @@ public class MainActivity extends Activity {
                 break;
             case R.id.btn_04:
                 startActivity(new Intent(MainActivity.this,RecyclerStaggeredGrid2Activity.class));
+                finish();
+                break;
+            case R.id.btn_05:
+                startActivity(new Intent(MainActivity.this,CardView2StaggeredGridActivity.class));
                 finish();
                 break;
         }

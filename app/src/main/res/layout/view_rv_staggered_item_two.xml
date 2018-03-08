@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:paddingBottom="5dp"
+    android:paddingRight="5dp"
+    android:background="@color/colorAccent"
     android:orientation="vertical">
 
     <TextView
@@ -10,5 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:background="@color/colorPrimary"
         tools:text="item" />
 </LinearLayout>

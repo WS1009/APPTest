@@ -17,7 +17,7 @@ import com.wangshun.apptest.decoration.DividerGridItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerStaggerGridActivity extends Activity {
+public class RecyclerStaggeredGridActivity extends Activity {
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas;

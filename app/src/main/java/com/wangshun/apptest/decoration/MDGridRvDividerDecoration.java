@@ -36,8 +36,10 @@ public class MDGridRvDividerDecoration extends RecyclerView.ItemDecoration {
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         // 绘制间隔，每一个item，绘制右边和下方间隔样式
         int childCount = parent.getChildCount();
-        int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
-        int orientation = ((GridLayoutManager) parent.getLayoutManager()).getOrientation();
+//        int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
+//        int orientation = ((GridLayoutManager) parent.getLayoutManager()).getOrientation();
+        int spanCount=2;
+        int orientation=OrientationHelper.VERTICAL;
         boolean isDrawHorizontalDivider = true;
         boolean isDrawVerticalDivider = true;
 
@@ -78,10 +80,13 @@ public class MDGridRvDividerDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    /**
+     * 设置item的偏移量，偏移部分用于填充间隔样式，在RecyclerView的onMesure中调用该方法
+     */
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
-        int orientation = ((GridLayoutManager) parent.getLayoutManager()).getOrientation();
+        int spanCount = 2;
+        int orientation = OrientationHelper.VERTICAL;
         int position = parent.getChildLayoutPosition(view);
         if (orientation == OrientationHelper.VERTICAL && (position + 1) % spanCount == 0) {
             outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());

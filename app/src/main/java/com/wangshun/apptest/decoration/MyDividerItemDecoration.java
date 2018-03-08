@@ -38,6 +38,12 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration {
         setOrientation(orientation);
     }
 
+    /**
+     * 在item绘制之前被调用，该方法主要用于绘制间隔样式
+     * @param c
+     * @param parent
+     * @param state
+     */
     @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         // 绘制间隔
@@ -48,6 +54,13 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    /**
+     * 设置item的偏移量，偏移部分用于填充间隔样式，在RecyclerView的onMesure中调用该方法
+     * @param outRect
+     * @param view
+     * @param parent
+     * @param state
+     */
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         if (mOrientation == VERTICAL_LIST) {

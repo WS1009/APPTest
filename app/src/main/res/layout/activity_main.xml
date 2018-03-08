@@ -13,41 +13,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="button-01" />
+        android:textAllCaps="false"
+        android:text="RecyclerStaggeredGridActivity" />
 
     <Button
         android:id="@+id/btn_02"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="button-02" />
+        android:textAllCaps="false"
+        android:text="RecyclerLinearActivity" />
 
     <Button
         android:id="@+id/btn_03"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="button-03" />
+        android:textAllCaps="false"
+        android:text="RecyclerGridActivity" />
 
     <Button
         android:id="@+id/btn_04"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="button-04" />
+        android:textAllCaps="false"
+        android:text="RecyclerStaggeredGrid2Activity" />
 
     <Button
         android:id="@+id/btn_05"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="button-05" />
+        android:textAllCaps="false"
+        android:text="CardView2StaggeredGridActivity" />
 
     <Button
         android:id="@+id/btn_06"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
+        android:textAllCaps="false"
         android:text="button-06" />
 
 
