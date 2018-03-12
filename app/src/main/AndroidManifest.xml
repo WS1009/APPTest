@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangshun.apptest">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +25,8 @@
         <activity android:name=".recycler.CardView2StaggeredGridActivity" />
         <activity android:name=".view.qqlistview.QQListViewActivity" />
         <activity android:name=".view.commomlistview.CommonListViewActivity" />
-        <activity android:name=".view.zdy.CustomTitleActivity"></activity>
+        <activity android:name=".view.zdy.CustomTitleActivity" />
+        <activity android:name=".http.OkHttpActivity"></activity>
     </application>
 
 </manifest>

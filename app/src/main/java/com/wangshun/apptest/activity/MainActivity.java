@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.wangshun.apptest.R;
+import com.wangshun.apptest.http.OkHttpActivity;
 import com.wangshun.apptest.recycler.CardView2StaggeredGridActivity;
 import com.wangshun.apptest.recycler.RecyclerGridActivity;
 import com.wangshun.apptest.recycler.RecyclerLinearActivity;
@@ -42,6 +43,7 @@ public class MainActivity extends Activity {
         list.add("QQListViewActivity");
         list.add("CommonListViewActivity");
         list.add("CustomTitleActivity");
+        list.add("OkHttpActivity");
 
 
         mListView = findViewById(R.id.lv_main);
@@ -80,6 +82,9 @@ public class MainActivity extends Activity {
                         break;
                     case 7:
                         startActivity(new Intent(MainActivity.this,CustomTitleActivity.class));
+                        break;
+                    case 8:
+                        startActivity(new Intent(MainActivity.this,OkHttpActivity.class));
                         break;
 
                 }
