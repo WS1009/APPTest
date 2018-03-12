@@ -22,7 +22,8 @@
         <activity android:name=".recycler.RecyclerStaggeredGrid2Activity" />
         <activity android:name=".recycler.CardView2StaggeredGridActivity" />
         <activity android:name=".view.qqlistview.QQListViewActivity" />
-        <activity android:name=".view.commomlistview.CommonListViewActivity"></activity>
+        <activity android:name=".view.commomlistview.CommonListViewActivity" />
+        <activity android:name=".view.zdy.CustomTitleActivity"></activity>
     </application>
 
 </manifest>
