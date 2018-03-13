@@ -20,6 +20,7 @@ import com.wangshun.apptest.view.commomlistview.CommonAdapter;
 import com.wangshun.apptest.view.commomlistview.CommonListViewActivity;
 import com.wangshun.apptest.view.commomlistview.ViewHolder;
 import com.wangshun.apptest.view.qqlistview.QQListViewActivity;
+import com.wangshun.apptest.view.zdy.CustomImageActivity;
 import com.wangshun.apptest.view.zdy.CustomTitleActivity;
 
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class MainActivity extends Activity {
         list.add("CommonListViewActivity");
         list.add("CustomTitleActivity");
         list.add("OkHttpActivity");
+        list.add("CustomImageView");
 
 
         mListView = findViewById(R.id.lv_main);
@@ -58,33 +60,36 @@ public class MainActivity extends Activity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i){
+                switch (i) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this,RecyclerStaggeredGridActivity.class));
+                        startActivity(new Intent(MainActivity.this, RecyclerStaggeredGridActivity.class));
                         break;
                     case 1:
-                        startActivity(new Intent(MainActivity.this,RecyclerLinearActivity.class));
+                        startActivity(new Intent(MainActivity.this, RecyclerLinearActivity.class));
                         break;
                     case 2:
-                        startActivity(new Intent(MainActivity.this,RecyclerGridActivity.class));
+                        startActivity(new Intent(MainActivity.this, RecyclerGridActivity.class));
                         break;
                     case 3:
-                        startActivity(new Intent(MainActivity.this,RecyclerStaggeredGrid2Activity.class));
+                        startActivity(new Intent(MainActivity.this, RecyclerStaggeredGrid2Activity.class));
                         break;
                     case 4:
-                        startActivity(new Intent(MainActivity.this,CardView2StaggeredGridActivity.class));
+                        startActivity(new Intent(MainActivity.this, CardView2StaggeredGridActivity.class));
                         break;
                     case 5:
-                        startActivity(new Intent(MainActivity.this,QQListViewActivity.class));
+                        startActivity(new Intent(MainActivity.this, QQListViewActivity.class));
                         break;
                     case 6:
-                        startActivity(new Intent(MainActivity.this,CommonListViewActivity.class));
+                        startActivity(new Intent(MainActivity.this, CommonListViewActivity.class));
                         break;
                     case 7:
-                        startActivity(new Intent(MainActivity.this,CustomTitleActivity.class));
+                        startActivity(new Intent(MainActivity.this, CustomTitleActivity.class));
                         break;
                     case 8:
-                        startActivity(new Intent(MainActivity.this,OkHttpActivity.class));
+                        startActivity(new Intent(MainActivity.this, OkHttpActivity.class));
+                        break;
+                    case 9:
+                        startActivity(new Intent(MainActivity.this, CustomImageActivity.class));
                         break;
 
                 }
