@@ -3,11 +3,9 @@ package com.wangshun.apptest.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.wangshun.apptest.R;
 import com.wangshun.apptest.http.OkHttpActivity;
@@ -21,7 +19,9 @@ import com.wangshun.apptest.view.commomlistview.CommonListViewActivity;
 import com.wangshun.apptest.view.commomlistview.ViewHolder;
 import com.wangshun.apptest.view.qqlistview.QQListViewActivity;
 import com.wangshun.apptest.view.zdy.CustomImageActivity;
+import com.wangshun.apptest.view.zdy.CustomProgressBarActivity;
 import com.wangshun.apptest.view.zdy.CustomTitleActivity;
+import com.wangshun.apptest.view.zdy.CustomVolumControlBarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +46,8 @@ public class MainActivity extends Activity {
         list.add("CustomTitleActivity");
         list.add("OkHttpActivity");
         list.add("CustomImageView");
+        list.add("CustomProgressBarActivity");
+        list.add("CustomVolumControlBarActivity");
 
 
         mListView = findViewById(R.id.lv_main);
@@ -90,6 +92,12 @@ public class MainActivity extends Activity {
                         break;
                     case 9:
                         startActivity(new Intent(MainActivity.this, CustomImageActivity.class));
+                        break;
+                    case 10:
+                        startActivity(new Intent(MainActivity.this, CustomProgressBarActivity.class));
+                        break;
+                    case 11:
+                        startActivity(new Intent(MainActivity.this, CustomVolumControlBarActivity.class));
                         break;
 
                 }

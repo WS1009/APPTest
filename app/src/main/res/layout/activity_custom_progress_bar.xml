@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bar="http://schemas.android.com/apk/res/com.wangshun.apptest"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wangshun.apptest.view.zdy.CustomProgressBarActivity">
+
+    <com.wangshun.apptest.view.zdy.CustomProgressBar
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        bar:circleWidth="15dp"
+        bar:firstColor="#D4F668"
+        bar:secondColor="#2F9DD2"
+        bar:speed="20" />
+
+    <com.wangshun.apptest.view.zdy.CustomProgressBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        bar:circleWidth="24dp"
+        android:layout_marginBottom="40dp"
+        bar:firstColor="#16A3FA"
+        bar:secondColor="#D20F02"
+        bar:speed="10" />
+
+</RelativeLayout>

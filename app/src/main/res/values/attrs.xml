@@ -18,4 +18,33 @@
         </attr>
     </declare-styleable>
 
+
+    <attr name="firstColor" format="color" />
+    <attr name="secondColor" format="color" />
+    <attr name="circleWidth" format="dimension" />
+    <attr name="speed" format="integer" />
+
+    <declare-styleable name="CustomProgressBar">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <attr name="circleWidth" />
+        <attr name="speed" />
+    </declare-styleable>
+
+    <attr name="volumFirstColor" format="color" />
+    <attr name="volumSecondColor" format="color" />
+    <attr name="volumCircleWidth" format="dimension" />
+    <attr name="dotCount" format="integer" />
+    <attr name="splitSize" format="integer" />
+    <attr name="bg" format="reference"></attr>
+
+    <declare-styleable name="CustomVolumControlBar">
+        <attr name="volumFirstColor" />
+        <attr name="volumSecondColor" />
+        <attr name="volumCircleWidth" />
+        <attr name="dotCount" />
+        <attr name="splitSize" />
+        <attr name="bg" />
+    </declare-styleable>
+
 </resources>

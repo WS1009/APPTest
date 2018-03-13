@@ -27,7 +27,9 @@
         <activity android:name=".view.commomlistview.CommonListViewActivity" />
         <activity android:name=".view.zdy.CustomTitleActivity" />
         <activity android:name=".http.OkHttpActivity" />
-        <activity android:name=".view.zdy.CustomImageActivity"></activity>
+        <activity android:name=".view.zdy.CustomImageActivity" />
+        <activity android:name=".view.zdy.CustomProgressBarActivity" />
+        <activity android:name=".view.zdy.CustomVolumControlBarActivity"></activity>
     </application>
 
 </manifest>

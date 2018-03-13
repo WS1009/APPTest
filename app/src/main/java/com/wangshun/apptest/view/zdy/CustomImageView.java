@@ -34,7 +34,7 @@ public class CustomImageView extends ImageView {
     private Rect mTextBound;
     private int mWidth;
     private int mHeight;
-    private int IMAGE_SCALE_FITXY=1;
+    private int IMAGE_SCALE_FITXY = 1;
 
     public CustomImageView(Context context) {
         this(context, null);
@@ -50,6 +50,7 @@ public class CustomImageView extends ImageView {
 
     /**
      * 初始化所特有自定义类型
+     *
      * @param context
      * @param attrs
      * @param defStyleAttr
@@ -58,41 +59,40 @@ public class CustomImageView extends ImageView {
     public CustomImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomImageView, defStyleAttr, 0);
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomImageView, defStyleAttr, 0);
 
-        int n = a.getIndexCount();
+        int indexCount = typedArray.getIndexCount();
 
-        for (int i = 0; i < n; i++) {
-            int attr = a.getIndex(i);
-
+        for (int i = 0; i < indexCount; i++) {
+            int attr = typedArray.getIndex(i);
             switch (attr) {
                 case R.styleable.CustomImageView_image:
-                    mImage = BitmapFactory.decodeResource(getResources(), a.getResourceId(attr, 0));
+                    mImage = BitmapFactory.decodeResource(getResources(), typedArray.getResourceId(attr, 0));
                     break;
                 case R.styleable.CustomImageView_imageScaleType:
-                    mImageScale = a.getInt(attr, 0);
+                    mImageScale = typedArray.getInt(attr, 0);
                     break;
                 case R.styleable.CustomImageView_imageText:
-                    mTitle = a.getString(attr);
+                    mTitle = typedArray.getString(attr);
                     break;
                 case R.styleable.CustomImageView_imageTextColor:
-                    mTextColor = a.getColor(attr, Color.BLACK);
+                    mTextColor = typedArray.getColor(attr, Color.BLACK);
                     break;
                 case R.styleable.CustomImageView_imageTextSize:
-                    mTextSize = a.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                    mTextSize = typedArray.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
                             16, getResources().getDisplayMetrics()));
                     break;
 
             }
         }
-        a.recycle();
+
+        typedArray.recycle();
         rect = new Rect();
         mPaint = new Paint();
         mTextBound = new Rect();
         mPaint.setTextSize(mTextSize);
         // 计算了描绘字体需要的范围
         mPaint.getTextBounds(mTitle, 0, mTitle.length(), mTextBound);
-
     }
 
     @Override
